@@ -1,3 +1,5 @@
+require_relative 'dependency'
+
 class Library
   attr_accessor :authors, :books, :readers, :orders
 
