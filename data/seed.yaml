@@ -1,0 +1,55 @@
+---
+:authors:
+- !ruby/object:Author
+  name: Victor D'Amore DVM
+  bio: Biography
+- &1 !ruby/object:Author
+  name: Kesha Murphy
+  bio: Biography
+- &2 !ruby/object:Author
+  name: Jesica Jacobson
+  bio: Biography
+:books:
+- &5 !ruby/object:Book
+  title: The Wings of the Dove
+  author: *1
+- &3 !ruby/object:Book
+  title: The Yellow Meads of Asphodel
+  author: *2
+- &7 !ruby/object:Book
+  title: An Acceptable Time
+  author: *1
+:readers:
+- &4 !ruby/object:Reader
+  name: Jannie Feest
+  email: coltondamore@connellyturcotte.io
+  city: North Shelton
+  street: Dooley Squares
+  house: 150
+- &6 !ruby/object:Reader
+  name: Roy Kuphal
+  email: gerardrogahn@wunsch.com
+  city: North Delia
+  street: Shavon Ferry
+  house: 657
+:orders:
+- !ruby/object:Order
+  book: *3
+  reader: *4
+  date: 2019-05-24
+- !ruby/object:Order
+  book: *5
+  reader: *6
+  date: 2019-05-24
+- !ruby/object:Order
+  book: *3
+  reader: *6
+  date: 2019-05-24
+- !ruby/object:Order
+  book: *3
+  reader: *6
+  date: 2019-05-24
+- !ruby/object:Order
+  book: *7
+  reader: *6
+  date: 2019-05-24

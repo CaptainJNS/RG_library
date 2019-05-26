@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # module for calculate statistics
-module Statistic
+module Statistics
   def top(orders, object, quantity = 1)
     tops = Hash.new(0)
     orders.each { |order| tops[order.send(object)] += 1 }

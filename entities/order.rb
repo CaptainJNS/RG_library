@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative './validation/validate'
+require_relative '../validation/validate'
 require 'date'
 
 # Order class
@@ -20,6 +20,6 @@ class Order
   end
 
   def to_s
-    "#{book}, #{reader}, #{date}"
+    "#{book}, was taken by #{reader}, #{date}"
   end
 end

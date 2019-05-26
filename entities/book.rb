@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative './validation/validate'
+require_relative '../validation/validate'
 
 # Book class
 class Book
@@ -18,6 +18,6 @@ class Book
   end
 
   def to_s
-    "#{title}, by #{author}"
+    "\"#{title}\", written by #{author}"
   end
 end
