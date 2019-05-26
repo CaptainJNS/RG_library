@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Order class
 class Order
   attr_accessor :book, :reader, :date
 
@@ -10,5 +13,4 @@ class Order
   def to_s
     "#{book}, #{reader}, #{date}"
   end
-  
 end

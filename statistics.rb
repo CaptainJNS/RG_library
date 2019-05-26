@@ -2,21 +2,18 @@
 
 # module for calculate statistics
 module Statistic
-  def top_reader(orders, quantity = 1)
-    top_readers = Hash.new(0)
-    orders.each { |order| top_readers[order.reader] += 1 }
-    top_readers.sort_by { |_key, value| -value }[0...quantity].to_h
+  def top(orders, object, quantity = 1)
+    tops = Hash.new(0)
+    orders.each { |order| tops[order.send(object)] += 1 }
+    tops.sort_by { |_key, value| -value }[0...quantity].to_h
   end
 
-  def top_book(orders, quantity = 1)
-    top_books = Hash.new(0)
-    orders.each { |order| top_books[order.book] += 1 }
-    top_books.sort_by { |_key, value| -value }[0...quantity].to_h
+  def number_of_readers_top_books(orders, quantity = 3)
+    top_books = top(orders, :book, quantity)
+    readers = []
+    orders.each do |order|
+      readers.push(order.reader) if top_books.include?(order.book)
+    end
+    readers.uniq.size
   end
-
-  # def number_of_readers(orders, quantity = 3)
-  #   top_books = top_book(orders, quantity)
-  #   readers = []
-  #   top_books.each {|key, value| }#use array.uniq
-  # end
 end

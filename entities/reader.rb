@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Reader class
 class Reader
   attr_accessor :name, :email, :city, :street, :house
 
@@ -12,5 +15,4 @@ class Reader
   def to_s
     name
   end
-  
 end

@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
+# Book class
 class Book
   attr_accessor :title, :author
-  
+
   def initialize(title, author)
     @title = title
     @author = author
@@ -9,5 +12,4 @@ class Book
   def to_s
     "#{title}, by #{author}"
   end
-
 end

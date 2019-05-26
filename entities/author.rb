@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
+# Author class
 class Author
-	attr_accessor :name, :bio
+  attr_accessor :name, :bio
 
-	def initialize(name, bio = "")
-		@name = name
-		@bio = bio
-	end
+  def initialize(name, bio = '')
+    @name = name
+    @bio = bio
+  end
 
-	def to_s
-			name
-	end 
+  def to_s
+    name
+  end
 end
