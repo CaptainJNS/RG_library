@@ -6,15 +6,15 @@ require_relative 'errors'
 module Validate
   include Errors
 
-  def empty(*args)
+  def not_empty?(*args)
     args.each { |x| raise EmptyStringError if x.empty? }
   end
 
-  def instance(main_class, argument)
-    raise WrongClassError unless argument.instance_of?(main_class)
+  def instance?(main_class, *args)
+    args.each {|x| raise WrongClassError unless x.instance?(main_class)}    
   end
 
-  def positive(num)
-    raise WrongNumberError if num.negative?
+  def positive?(num)
+    raise WrongNumberError unless num.positive?
   end
 end
