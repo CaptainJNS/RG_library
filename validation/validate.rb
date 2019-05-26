@@ -11,7 +11,7 @@ module Validate
   end
 
   def instance?(main_class, *args)
-    args.each {|x| raise WrongClassError unless x.instance?(main_class)}    
+    args.each { |x| raise WrongClassError unless x.instance?(main_class) }
   end
 
   def positive?(num)
