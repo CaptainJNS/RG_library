@@ -1,55 +1,240 @@
 ---
-:authors:
-- !ruby/object:Author
-  name: Victor D'Amore DVM
-  bio: Biography
-- &1 !ruby/object:Author
-  name: Kesha Murphy
-  bio: Biography
-- &2 !ruby/object:Author
-  name: Jesica Jacobson
-  bio: Biography
 :books:
-- &5 !ruby/object:Book
-  title: The Wings of the Dove
+- !ruby/object:Book
+  title: That Hideous Strength
+  author: &3 !ruby/object:Author
+    name: Blanch Batz PhD
+    biography: ''
+  readers: 1
+- &13 !ruby/object:Book
+  title: The Golden Apples of the Sun
+  author: &4 !ruby/object:Author
+    name: Melody Kautzer
+    biography: ''
+  readers: 8
+- &15 !ruby/object:Book
+  title: If I Forget Thee Jerusalem
+  author: &8 !ruby/object:Author
+    name: Neil MacGyver
+    biography: ''
+  readers: 14
+- &17 !ruby/object:Book
+  title: Moab Is My Washpot
+  author: &6 !ruby/object:Author
+    name: Rolf Prosacco
+    biography: ''
+  readers: 19
+- &19 !ruby/object:Book
+  title: Death Be Not Proud
+  author: &2 !ruby/object:Author
+    name: Dr. Angela Bailey
+    biography: ''
+  readers: 11
+- &21 !ruby/object:Book
+  title: Clouds of Witness
+  author: &12 !ruby/object:Author
+    name: Chi Haley
+    biography: ''
+  readers: 12
+- &22 !ruby/object:Book
+  title: The Stars' Tennis Balls
+  author: &1 !ruby/object:Author
+    name: Lucius Cummerata
+    biography: ''
+  readers: 19
+- &23 !ruby/object:Book
+  title: The Curious Incident of the Dog in the Night-Time
   author: *1
-- &3 !ruby/object:Book
-  title: The Yellow Meads of Asphodel
+  readers: 0
+- &25 !ruby/object:Book
+  title: The Man Within
   author: *2
-- &7 !ruby/object:Book
-  title: An Acceptable Time
+  readers: 1
+- &26 !ruby/object:Book
+  title: His Dark Materials
+  author: *3
+  readers: 2
+- &28 !ruby/object:Book
+  title: That Hideous Strength
+  author: &5 !ruby/object:Author
+    name: Lamar Dietrich
+    biography: ''
+  readers: 2
+- &30 !ruby/object:Book
+  title: The Golden Bowl
+  author: *3
+  readers: 8
+- &31 !ruby/object:Book
+  title: The Violent Bear It Away
+  author: &7 !ruby/object:Author
+    name: Ms. Alexis Dare
+    biography: ''
+  readers: 7
+- &32 !ruby/object:Book
+  title: Stranger in a Strange Land
+  author: *4
+  readers: 10
+- &34 !ruby/object:Book
+  title: In a Dry Season
+  author: *5
+  readers: 14
+- &35 !ruby/object:Book
+  title: Nectar in a Sieve
+  author: *3
+  readers: 17
+- !ruby/object:Book
+  title: The Waste Land
+  author: &10 !ruby/object:Author
+    name: Thaddeus Maggio
+    biography: ''
+  readers: 1
+- !ruby/object:Book
+  title: The World, the Flesh and the Devil
+  author: &9 !ruby/object:Author
+    name: Jodi Kovacek
+    biography: ''
+  readers: 4
+- !ruby/object:Book
+  title: Beneath the Bleeding
   author: *1
+  readers: 1
+- !ruby/object:Book
+  title: Françoise Sagan
+  author: &11 !ruby/object:Author
+    name: Mrs. Su Mraz
+    biography: ''
+  readers: 19
+:authors:
+- *6
+- *2
+- *7
+- *8
+- *9
+- !ruby/object:Author
+  name: Olimpia Jacobson
+  biography: ''
+- *10
+- *1
+- *5
+- *4
+- *11
+- *12
+- *3
 :readers:
-- &4 !ruby/object:Reader
-  name: Jannie Feest
-  email: coltondamore@connellyturcotte.io
-  city: North Shelton
-  street: Dooley Squares
-  house: 150
-- &6 !ruby/object:Reader
-  name: Roy Kuphal
-  email: gerardrogahn@wunsch.com
-  city: North Delia
-  street: Shavon Ferry
-  house: 657
+- &20 !ruby/object:Reader
+  name: Emanuel Padberg
+  email: blakehammes@kuphalhagenes.name
+  city: North Carolann
+  street: Steven Mountains
+  house: 8
+  books: 13
+- &16 !ruby/object:Reader
+  name: Augusta Cruickshank
+  email: omarpaucek@beier.info
+  city: West Stanford
+  street: Edwardo Throughway
+  house: 22
+  books: 5
+- &18 !ruby/object:Reader
+  name: Jimmy Tillman
+  email: harmony@dietrichkreiger.org
+  city: Schoentown
+  street: Jann Prairie
+  house: 74
+  books: 9
+- &33 !ruby/object:Reader
+  name: Mikel Dickens II
+  email: camilla@nikolausfay.name
+  city: Elroyside
+  street: Boyle Cape
+  house: 30
+  books: 5
+- &27 !ruby/object:Reader
+  name: Harvey Koepp
+  email: todd@brakusgibson.biz
+  city: Jodieton
+  street: Wolff Mount
+  house: 7
+  books: 14
+- &24 !ruby/object:Reader
+  name: Raymond Buckridge
+  email: arnulfo@satterfield.biz
+  city: Lake Von
+  street: Philip Roads
+  house: 73
+  books: 9
+- &29 !ruby/object:Reader
+  name: Marget Gleason Jr.
+  email: jefferyanderson@rolfson.net
+  city: Rolfsontown
+  street: Sona Drive
+  house: 85
+  books: 3
+- &14 !ruby/object:Reader
+  name: Armand Schimmel
+  email: shirleytorp@cainthiel.biz
+  city: West Elfriede
+  street: Sawayn Mills
+  house: 13
+  books: 15
 :orders:
 - !ruby/object:Order
-  book: *3
-  reader: *4
-  date: 2019-05-24
+  book: *13
+  reader: *14
+  date: 2019-03-26
 - !ruby/object:Order
-  book: *5
-  reader: *6
-  date: 2019-05-24
+  book: *15
+  reader: *16
+  date: 2019-02-04
 - !ruby/object:Order
-  book: *3
-  reader: *6
-  date: 2019-05-24
+  book: *17
+  reader: *18
+  date: 2019-02-22
 - !ruby/object:Order
-  book: *3
-  reader: *6
-  date: 2019-05-24
+  book: *19
+  reader: *20
+  date: 2019-02-01
 - !ruby/object:Order
-  book: *7
-  reader: *6
-  date: 2019-05-24
+  book: *21
+  reader: *18
+  date: 2019-02-15
+- !ruby/object:Order
+  book: *22
+  reader: *18
+  date: 2019-02-04
+- !ruby/object:Order
+  book: *23
+  reader: *24
+  date: 2019-04-11
+- !ruby/object:Order
+  book: *25
+  reader: *18
+  date: 2019-04-17
+- !ruby/object:Order
+  book: *26
+  reader: *27
+  date: 2019-01-17
+- !ruby/object:Order
+  book: *28
+  reader: *29
+  date: 2019-03-15
+- !ruby/object:Order
+  book: *30
+  reader: *18
+  date: 2019-01-23
+- !ruby/object:Order
+  book: *31
+  reader: *20
+  date: 2019-05-21
+- !ruby/object:Order
+  book: *32
+  reader: *33
+  date: 2019-05-25
+- !ruby/object:Order
+  book: *34
+  reader: *29
+  date: 2019-01-19
+- !ruby/object:Order
+  book: *35
+  reader: *14
+  date: 2019-03-29

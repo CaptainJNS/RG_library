@@ -29,4 +29,14 @@ class Library
   def get_number_of_readers_top_books(quantity = 3)
     number_of_readers_top_books(@orders, quantity)
   end
+
+  def save(path = '')
+    data = {
+      books: @books,
+      orders: @orders,
+      readers: @readers,
+      authors: @authors
+    }
+    path.empty? ? save_data(data) : save_data(data, path)
+  end
 end

@@ -5,6 +5,7 @@ require 'yaml'
 # module for working with yaml files
 module DataUtilities
   SEED = './data/seed.yaml'
+  SAVE = './data/save.yaml'
 
   def load_data(path = SEED)
     @data = Psych.safe_load(
@@ -19,7 +20,7 @@ module DataUtilities
     @data[key.to_sym]
   end
 
-  def save_data(path)
-    File.write(path, @data.to_yaml)
+  def save_data(data, path = SAVE)
+    File.write(path, data.to_yaml)
   end
 end
