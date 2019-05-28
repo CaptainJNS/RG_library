@@ -1,8 +1,12 @@
-# frozen_string_literal: true
-
-require_relative 'library'
+require_relative './entities/library'
 
 library = Library.new
+library.generate_library
+
+author = Author.new('Hideo Kojima', 'A God, a genius and just a good guy')
+book = Book.new('How to become a genius', author)
+
+library.add_objects(author, book)
 
 def show(library)
   orders(library)

@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require_relative '../validation/validate'
 
-# Author class
 class Author
   include Validate
 

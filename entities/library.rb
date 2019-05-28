@@ -1,17 +1,37 @@
-# frozen_string_literal: true
+require_relative '../dependency'
+require_relative '../data/data_generator'
 
-require_relative 'dependency'
-
-# Library class
 class Library
+  include DataGenerator
   include DataUtilities
   include Statistics
 
-  attr_accessor :authors, :books, :readers, :orders
+  attr_reader :authors, :books, :readers, :orders
 
-  def initialize(path = '')
-    path.empty? ? load_data : load_data(path)
+  def add_objects(*objects)
+    objects.each do |object|
+      case object.class
+      when Author
+        @authors << object
+      when Book
+        @books << object
+      when Reader
+        @readers << object
+      when Order
+        @orders << object
+      end
+    end
+  end
 
+  def generate_library
+    @authors = generate_authors
+    @books = generate_books
+    @readers = generate_readers
+    @orders = generate_orders
+  end
+
+  def load_library_from_file(path)
+    load_data(path)
     @books = get_data('books')
     @orders = get_data('orders')
     @readers = get_data('readers')

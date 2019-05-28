@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require 'yaml'
 
-# module for working with yaml files
 module DataUtilities
   SEED = './data/seed.yaml'
   SAVE = './data/save.yaml'

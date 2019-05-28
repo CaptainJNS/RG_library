@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require_relative '../validation/validate'
 
-# Reader class
 class Reader
   include Validate
 

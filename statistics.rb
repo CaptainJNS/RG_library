@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# module for calculate statistics
 module Statistics
   def top(orders, object, quantity = 1)
     tops = Hash.new(0)
