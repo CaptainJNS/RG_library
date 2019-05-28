@@ -1,7 +1,7 @@
 module Errors
   class EmptyStringError < StandardError
     def initialize
-      super('Parametr must be not empty!')
+      super('Parameter must be not empty!')
     end
   end
 
@@ -13,7 +13,7 @@ module Errors
 
   class WrongNumberError < StandardError
     def initialize
-      super('Must be a positive!')
+      super('Number must be a positive!')
     end
   end
 end

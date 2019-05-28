@@ -4,11 +4,11 @@ module Validate
   include Errors
 
   def not_empty?(*args)
-    args.each { |x| raise EmptyStringError if x.empty? }
+    raise EmptyStringError unless args.any?(&:empty?)
   end
 
   def instance?(main_class, *args)
-    args.each { |x| raise WrongClassError unless x.instance_of?(main_class) }
+    args.each { |object| raise WrongClassError unless object.instance_of?(main_class) }
   end
 
   def positive?(num)
