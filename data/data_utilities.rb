@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml'
 
 module DataUtilities
@@ -5,7 +7,7 @@ module DataUtilities
   SAVE = './data/save.yaml'
 
   def load_data(path = SEED)
-    @data = Psych.safe_load(
+    Psych.safe_load(
       File.read(path),
       [Symbol, Author, Book, Order, Reader, Date],
       [],
@@ -13,8 +15,8 @@ module DataUtilities
     )
   end
 
-  def get_data(key)
-    @data[key.to_sym]
+  def get_data(data, key)
+    data[key.to_sym]
   end
 
   def save_data(data, path = SAVE)

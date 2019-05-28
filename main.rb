@@ -2,6 +2,7 @@ require_relative './entities/library'
 
 library = Library.new
 library.generate_library
+# library.load_library_from_file
 
 author = Author.new('Hideo Kojima', 'A God, a genius and just a good guy')
 book = Book.new('How to become a genius', author)

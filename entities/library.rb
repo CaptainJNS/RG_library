@@ -30,12 +30,12 @@ class Library
     @orders = generate_orders(@books, @readers)
   end
 
-  def load_library_from_file(path)
-    load_data(path)
-    @books = get_data('books')
-    @orders = get_data('orders')
-    @readers = get_data('readers')
-    @authors = get_data('authors')
+  def load_library_from_file(path = '')
+    data = path.empty? ? load_data : load_data(path)
+    @books = get_data(data, 'books')
+    @orders = get_data(data, 'orders')
+    @readers = get_data(data, 'readers')
+    @authors = get_data(data, 'authors')
   end
 
   def get_top_books(quantity = 1)
