@@ -25,9 +25,9 @@ class Library
 
   def generate_library
     @authors = generate_authors
-    @books = generate_books
+    @books = generate_books(@authors)
     @readers = generate_readers
-    @orders = generate_orders
+    @orders = generate_orders(@books, @readers)
   end
 
   def load_library_from_file(path)
