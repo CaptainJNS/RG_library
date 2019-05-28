@@ -4,7 +4,7 @@ module Validate
   include Errors
 
   def not_empty?(*args)
-    raise EmptyStringError unless args.any?(&:empty?)
+    raise EmptyStringError if args.any?(&:empty?)
   end
 
   def instance?(main_class, *args)
