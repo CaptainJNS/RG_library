@@ -13,8 +13,8 @@ book2 = Book.new('Ruby on Rails for dummies', author2)
 authors = [author1, author2]
 books = [book1, book2]
 
-library1.add_objects(authors)
-library1.add_objects(books)
+library1.authors << authors
+library1.books << books
 
 # library2 = Library.new(authors: authors, books: books)
 

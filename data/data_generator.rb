@@ -9,7 +9,7 @@ module DataGenerator
   end
 
   def self.generate_books(authors, quantity = 25)
-    quantity.times.map { |author| Book.new(FFaker::Book.title, authors[author % authors.size]) }
+    quantity.times.map { Book.new(FFaker::Book.title, authors.sample) }
   end
 
   def self.generate_readers(quantity = 35)

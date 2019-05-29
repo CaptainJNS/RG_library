@@ -4,28 +4,13 @@ class Library
   include DataUtilities
   include Statistics
 
-  attr_reader :authors, :books, :readers, :orders
+  attr_accessor :authors, :books, :readers, :orders
 
   def initialize(authors: [], books: [], readers: [], orders: [])
     @authors = authors
     @books = books
     @readers = readers
     @orders = orders
-  end
-
-  def add_objects(objects)
-    objects.each do |object|
-      case object
-      when Author
-        @authors << object
-      when Book
-        @books << object
-      when Reader
-        @readers << object
-      when Order
-        @orders << object
-      end
-    end
   end
 
   def load_library_from_file(path = '')
