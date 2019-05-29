@@ -47,11 +47,11 @@ class Library
   end
 
   def get_top_books(quantity = 1)
-    top(@orders, :book, quantity)
+    top(@orders, :book, :title, quantity)
   end
 
   def get_top_readers(quantity = 1)
-    top(@orders, :reader, quantity)
+    top(@orders, :reader, :name, quantity)
   end
 
   def get_number_of_readers_top_books(quantity = 3)

@@ -30,23 +30,19 @@ def orders(library)
   puts library.orders
 end
 
-def top_readers(library, qua = 3)
+def top_readers(library, quantity = 3)
   puts '+' * 10 + 'top readers' + '+' * 10
-  library.get_top_readers(qua).each do |reader, value|
-    puts "#{reader} took #{value} books"
-  end
+  library.get_top_readers(quantity).each { |reader| puts reader }
 end
 
-def top_books(library, qua = 3)
+def top_books(library, quantity = 3)
   puts '+' * 10 + 'most popular books' + '+' * 10
-  library.get_top_books(qua).each do |book, value|
-    puts "#{book} was taken #{value} times"
-  end
+  library.get_top_books(quantity).each { |book| puts book }
 end
 
-def number_of_readers(library, qua = 3)
+def number_of_readers(library, quantity = 3)
   puts '+' * 10 + 'number of readers top books' + '+' * 10
-  puts library.get_number_of_readers_top_books(qua)
+  puts library.get_number_of_readers_top_books(quantity)
 end
 
 show(library1)
