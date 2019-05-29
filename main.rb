@@ -1,13 +1,22 @@
 require_relative './entities/library'
 
-library = Library.new
+library1 = Library.new
 # library.generate_library
-library.load_library_from_file
+library1.load_library_from_file
 
-author = Author.new('Hideo Kojima', 'A God, a genius and just a good guy')
-book = Book.new('How to become a genius', author)
+author1 = Author.new('Hideo Kojima', 'A God, a genius and just a good guy')
+book1 = Book.new('How to become a genius', author1)
 
-library.add_objects(author, book)
+author2 = Author.new('Albert Einstein', 'Your school teacher')
+book2 = Book.new('Ruby on Rails for dummies', author2)
+
+authors = [author1, author2]
+books = [book1, book2]
+
+library1.add_objects(authors)
+library1.add_objects(books)
+
+library2 = Library.new(author1, author2, book1, book2)
 
 def show(library)
   orders(library)
@@ -40,4 +49,6 @@ def number_of_readers(library, qua = 3)
   puts library.get_number_of_readers_top_books(qua)
 end
 
-show(library)
+show(library1)
+
+library2.save

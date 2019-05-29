@@ -8,9 +8,17 @@ class Library
 
   attr_reader :authors, :books, :readers, :orders
 
-  def add_objects(*objects)
+  def initialize(*objects)
+    @authors = []
+    @books = []
+    @readers = []
+    @orders = []
+    add_objects(objects)
+  end
+
+  def add_objects(objects)
     objects.each do |object|
-      case object.class
+      case object
       when Author
         @authors << object
       when Book
