@@ -1,15 +1,12 @@
 require_relative '../validation/validate'
-require 'date'
 
 class Order
   include Validate
 
-  attr_accessor :book, :reader, :date
+  attr_reader :book, :reader, :date
 
   def initialize(book, reader, date = Date.today)
-    instance?(Book, book)
-    instance?(Reader, reader)
-    instance?(Date, date)
+    valid(book, reader, date)
 
     @book = book
     @reader = reader
@@ -18,5 +15,13 @@ class Order
 
   def to_s
     "#{book}, was taken by #{reader}, #{date}"
+  end
+
+  private
+
+  def valid(book, reader, date)
+    instance?(Book, book)
+    instance?(Reader, reader)
+    instance?(Date, date)
   end
 end

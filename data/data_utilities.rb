@@ -1,21 +1,19 @@
 # frozen_string_literal: true
 
-require 'yaml'
-
 module DataUtilities
   SEED = './data/seed.yaml'
-  SAVE = './data/save.yaml'
+  STORE = './data/save.yaml'
 
-  def load_data(path = SEED)
+  def self.load_data(path)
     Psych.safe_load(
-      File.read(path),
+      File.read(path.empty? ? SEED : path),
       [Symbol, Library, Author, Book, Order, Reader, Date],
       [],
       true
     )
   end
 
-  def save_data(data, path = SAVE)
-    File.write(path, data.to_yaml)
+  def save_data(data, path)
+    path.empty? ? File.write(STORE, data.to_yaml) : File.write(path, data.to_yaml)
   end
 end
