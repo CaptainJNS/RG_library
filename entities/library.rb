@@ -1,19 +1,16 @@
 require_relative '../dependency'
-require_relative '../data/data_generator'
 
 class Library
-  include DataGenerator
   include DataUtilities
   include Statistics
 
   attr_reader :authors, :books, :readers, :orders
 
-  def initialize(*objects)
-    @authors = []
-    @books = []
-    @readers = []
-    @orders = []
-    add_objects(objects)
+  def initialize(authors: [], books: [], readers: [], orders: [])
+    @authors = authors
+    @books = books
+    @readers = readers
+    @orders = orders
   end
 
   def add_objects(objects)
@@ -31,19 +28,8 @@ class Library
     end
   end
 
-  def generate_library
-    @authors = generate_authors
-    @books = generate_books(@authors)
-    @readers = generate_readers
-    @orders = generate_orders(@books, @readers)
-  end
-
   def load_library_from_file(path = '')
-    data = path.empty? ? load_data : load_data(path)
-    @books = get_data(data, 'books')
-    @orders = get_data(data, 'orders')
-    @readers = get_data(data, 'readers')
-    @authors = get_data(data, 'authors')
+    path.empty? ? load_data : load_data(path)
   end
 
   def get_top_books(quantity = 1)
@@ -59,12 +45,6 @@ class Library
   end
 
   def save(path = '')
-    data = {
-      books: @books,
-      orders: @orders,
-      readers: @readers,
-      authors: @authors
-    }
-    path.empty? ? save_data(data) : save_data(data, path)
+    path.empty? ? save_data(self) : save_data(self, path)
   end
 end

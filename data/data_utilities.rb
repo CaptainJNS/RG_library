@@ -9,14 +9,10 @@ module DataUtilities
   def load_data(path = SEED)
     Psych.safe_load(
       File.read(path),
-      [Symbol, Author, Book, Order, Reader, Date],
+      [Symbol, Library, Author, Book, Order, Reader, Date],
       [],
       true
     )
-  end
-
-  def get_data(data, key)
-    data[key.to_sym]
   end
 
   def save_data(data, path = SAVE)

@@ -1,8 +1,8 @@
 require_relative './entities/library'
+require_relative './data/data_generator'
 
-library1 = Library.new
-# library.generate_library
-library1.load_library_from_file
+library1 = Library.new.load_library_from_file
+# library1 = DataGenerator.generate_library
 
 author1 = Author.new('Hideo Kojima', 'A God, a genius and just a good guy')
 book1 = Book.new('How to become a genius', author1)
@@ -16,7 +16,7 @@ books = [book1, book2]
 library1.add_objects(authors)
 library1.add_objects(books)
 
-library2 = Library.new(author1, author2, book1, book2)
+# library2 = Library.new(authors: authors, books: books)
 
 def show(library)
   orders(library)
@@ -47,4 +47,4 @@ end
 
 show(library1)
 
-library2.save
+library1.save
