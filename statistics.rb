@@ -10,6 +10,6 @@ module Statistics
   def number_of_readers_top_books(orders, quantity: 3)
     top_books = top(orders, object: :book, attr_name: :title, quantity: quantity)
 
-    orders.select { |order| top_books.include?(order.book.title) }.uniq.size
+    orders.select { |order| top_books.include?(order.book.title) }.uniq(&:reader).size
   end
 end
